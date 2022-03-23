@@ -14,6 +14,11 @@ Un mail est envoyé par le biai de la fonction PHP mail() qui résume le calcul.
 
 Le calculateur fonctionne avec une seul route (/) qui accepte deux méthodes (GET et POST)
 
+J'ai utilisé un component Alert pour afficher une alerte dans certains cas de figure:
+- Tous les champs ne sont pas renseigné
+- Les montants ne sont pas des nombres
+- Les devises renseignés ne sont pas correct (supporté par le calculateur)
+
 ### Possibilité pour l'avenir ?
 
 1) Rendre l'outil plus puissant en utilisant le taux de change 

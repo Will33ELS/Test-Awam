@@ -6,6 +6,9 @@
 </head>
 <body>
 <main>
+    @if(session()->has("alert.error"))
+        <x-alert type="danger" :message="session()->get('alert.error')"/>
+    @endif
     <div class="row">
         <form class="col-12 col-lg-6 m-5" method="POST" action="{{ route("home") }}">
             @csrf

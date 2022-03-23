@@ -3,13 +3,14 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Redirect;
 
 class DeviceController extends Controller
 {
     /**
      * Calculate controller
      * @param Request $request
-     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View|void
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View|\Illuminate\Http\RedirectResponse
      */
     public function calculate(Request $request){
         if($request->has(["devise1", "devise2", "amount1", "amount2"])){
@@ -48,6 +49,7 @@ class DeviceController extends Controller
         }else{
             session()->flash("alert.error", "Tous les champs sont requis.");
         }
+        return Redirect::route("home");
     }
 
     /**
